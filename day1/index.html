@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,37 +10,49 @@
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
+
 <body>
   <div id="app"></div>
   <script type="text/babel">
-    const name = "Joe CHhesney";
-    const handle="JoeMugss$$$";
-
-    function NameComponent (props) {
+    function FriendsList (props) {
       return (
-        <h1>{props.name}</h1>
+        <ul>
+          {props.list.map((name)=>(
+            <li key={name}>
+              {name}
+            </li>
+          ))}
+        </ul>
       )
     }
 
-    function HandleComponent (props) {
-      return (
-        <h3>{props.handle}</h3>
-      )
+    class App extends React.Component {
+      render() {
+        const friends = ["Jordan", "Tim", "Tucker"];
+        return(
+          <div>
+            Hello World
+            <FriendsList list={friends} />
+          </div>
+        )
+      }
     }
-
-    function App () {
-      return(
-        <div id="container">
-          <NameComponent name={name}/>
-          <HandleComponent handle={handle}/>
-        </div>
-      )
-    }
+    // function version of this class
+    // function App () {
+    //   const friends = ["Jordan", "Tim", "Tucker"];
+    //   return(
+    //     <div>
+    //       Hello World
+    //       <FriendsList list={friends} />
+    //     </div>
+    //   )
+    // }
 
     ReactDOM.render(
-      <App/>,
+      <App />,
       document.getElementById('app')
     );
   </script>
 </body>
+
 </html>
