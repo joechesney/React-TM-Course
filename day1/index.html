@@ -13,45 +13,9 @@
 
 <body>
   <div id="app"></div>
-  <script type="text/babel">
-    function FriendsList (props) {
-      return (
-        <ul>
-          {props.list.map((name)=>(
-            <li key={name}>
-              {name}
-            </li>
-          ))}
-        </ul>
-      )
-    }
 
-    class App extends React.Component {
-      render() {
-        const friends = ["Jordan", "Tim", "Tucker"];
-        return(
-          <div>
-            Hello World
-            <FriendsList list={friends} />
-          </div>
-        )
-      }
-    }
-    // function version of this class
-    // function App () {
-    //   const friends = ["Jordan", "Tim", "Tucker"];
-    //   return(
-    //     <div>
-    //       Hello World
-    //       <FriendsList list={friends} />
-    //     </div>
-    //   )
-    // }
+  <script type="text/babel" src="app.js">
 
-    ReactDOM.render(
-      <App />,
-      document.getElementById('app')
-    );
   </script>
 </body>
 
